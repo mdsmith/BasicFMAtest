@@ -1,4 +1,4 @@
-CXX = g++
+CXX = g++-4.7
 
 all: mul fma
 
