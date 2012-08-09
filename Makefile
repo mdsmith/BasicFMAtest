@@ -4,12 +4,22 @@ all: mul fma
 
 .PHONY: all clean
 
-fma: flags = -mfma4 -march=bdver1
-
 objs = fmaTest.o
 
-mul: $(objs)
-	$(CXX) -o $@ $^
+###### MUL ######
+
+mul: flags = -Ofast -ffast-math
+
+mult.o: fmaTest.cpp
+	$(CXX) -c -o $@ $^ $(flags)
+
+mul: mult.o
+	$(CXX) -o $@ $^  $(flags)
+
+
+###### FMA ######
+
+fma: flags = -Ofasat -ffast-math -mfma4 -march=bdver1 
 
 fmat.o: fmaTest.cpp
 	$(CXX) -c -o $@ $^ $(flags)

@@ -2,7 +2,7 @@
 #include <sys/time.h>
 using namespace std;
 
-#define ARRAY_LEN 100000
+#define ARRAY_LEN 1000000
 
 float arr[ARRAY_LEN];
 
@@ -24,7 +24,7 @@ int main()
     gettimeofday(&t2, NULL);
     elapsedTime = (t2.tv_sec -t1.tv_sec) * 1000.0;
     elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
-    cout << "Time: " << elapsedTime << endl;
+    cout << "Result: " << sum << " Time: " << elapsedTime << endl;
     
     return 0;
 }
