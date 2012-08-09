@@ -11,8 +11,6 @@ int main()
     for (int i = 0; i < ARRAY_LEN; i++)
         arr[i] = (float)i;
 
-    cout << "Hello World!" << endl;
-
     timeval t1, t2;
     double elapsedTime;
     gettimeofday(&t1, NULL);
@@ -25,6 +23,6 @@ int main()
     elapsedTime = (t2.tv_sec -t1.tv_sec) * 1000.0;
     elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0;
     cout << "Result: " << sum << " Time: " << elapsedTime << endl;
-    
+
     return 0;
 }
