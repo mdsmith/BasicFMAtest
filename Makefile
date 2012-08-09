@@ -19,7 +19,9 @@ mul: mult.o
 
 ###### FMA ######
 
-fma: flags = -Ofasat -ffast-math -mfma4 -march=bdver1 
+fma: CXX = g++-4.7
+
+fma: flags = -Ofast -ffast-math -mfma4 -march=bdver1
 
 fmat.o: fmaTest.cpp
 	$(CXX) -c -o $@ $^ $(flags)
